@@ -4,7 +4,9 @@
     <div>
       <ul>
         <li v-for="cartItem in $store.state.cartItems" :key="cartItem.id">
-          {{ cartItem }}
+          <img class="cart-img" :src="cartItem.imageUrl" :alt="cartItem.name" />
+          {{cartItem.name}}
+          {{cartItem.price}}
         </li>
       </ul>
     </div>
@@ -12,5 +14,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
+
+<style>
+.cart-img {
+  width: 50px;
+  height: 50px;
+}
+</style>

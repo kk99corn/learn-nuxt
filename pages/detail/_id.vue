@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log(1111)
       this.$store.commit('addCartItem', this.product)
       this.$router.push('/cart')
     }
