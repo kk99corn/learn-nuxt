@@ -11,7 +11,7 @@
       <div class="side-panel">
         <p class="name">{{ product.name }}</p>
         <p class="price">{{ product.price }}</p>
-<!--        <button type="button" @click="addToCart">Add to Cart</button>-->
+        <button type="button" @click="addToCart">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -26,6 +26,13 @@ export default {
     const res = await fetchProductById(params.id)
     const product = res.data
     return {product}
+  },
+  methods: {
+    addToCart() {
+      console.log(1111)
+      this.$store.commit('addCartItem', this.product)
+      this.$router.push('/cart')
+    }
   }
 }
 </script>
