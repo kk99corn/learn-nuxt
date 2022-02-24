@@ -35,7 +35,6 @@ export default {
   },
   methods: {
     moveToDetailPage(id) {
-      console.log(id)
       this.$router.push(`detail/${id}`)
     },
     async searchProducts(keyword) {

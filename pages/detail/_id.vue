@@ -19,7 +19,7 @@
 
 <script>
 import axios from "axios";
-import {fetchProductById} from "~/api";
+import {fetchProductById, createCartItem} from "~/api";
 
 export default {
   async asyncData({params}) {
@@ -28,9 +28,10 @@ export default {
     return {product}
   },
   methods: {
-    addToCart() {
+    async addToCart() {
+      const res = await createCartItem(this.product)
       this.$store.commit('addCartItem', this.product)
-      this.$router.push('/cart')
+      await this.$router.push('/cart')
     }
   }
 }
