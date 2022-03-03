@@ -27,5 +27,8 @@ export const actions = {
       ...item,
       imageUrl: `${item.imageUrl}?random=${Math.random()}`,
     })))
-  }
+  },
+  // async nuxtServerInit(storeContext, nuxtContext) {
+  //   await storeContext.dispatch(FETCH_CART_ITEMS)
+  // }
 }
