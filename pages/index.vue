@@ -18,15 +18,14 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Main from "~/pages/main";
 import SearchInput from "~/components/SearchInput";
-import {fetchProductsByKeyword} from "~/api";
+import {fetchProducts, fetchProductsByKeyword} from "~/api";
 
 export default {
   components: {SearchInput, Main},
   async asyncData() {
-    const res = await axios.get('http://localhost:3000/products')
+    const res = await fetchProducts()
     const products = res.data.map((item) => ({
       ...item,
       imageUrl: `${item.imageUrl}?random=${Math.random()}`,
